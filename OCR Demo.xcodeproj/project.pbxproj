@@ -21,6 +21,7 @@
 		D187081E1638821B00851E51 /* Tesseract.mm in Sources */ = {isa = PBXBuildFile; fileRef = D187081D1638821B00851E51 /* Tesseract.mm */; };
 		D18708B6163882BB00851E51 /* liblept.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D18708B4163882BB00851E51 /* liblept.a */; };
 		D18708B7163882BB00851E51 /* libtesseract_all.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D18708B5163882BB00851E51 /* libtesseract_all.a */; };
+		D18708ED16388C8D00851E51 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = D18708EC16388C8D00851E51 /* tessdata */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -187,6 +188,7 @@
 		D18708B21638829D00851E51 /* werdit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = werdit.h; sourceTree = "<group>"; };
 		D18708B4163882BB00851E51 /* liblept.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = liblept.a; sourceTree = "<group>"; };
 		D18708B5163882BB00851E51 /* libtesseract_all.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libtesseract_all.a; sourceTree = "<group>"; };
+		D18708EC16388C8D00851E51 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 		D18707E5163881F400851E51 = {
 			isa = PBXGroup;
 			children = (
+				D18708EC16388C8D00851E51 /* tessdata */,
 				D18708201638828900851E51 /* Tesseract */,
 				D18707FA163881F400851E51 /* OCR Demo */,
 				D18707F3163881F400851E51 /* Frameworks */,
@@ -513,6 +516,7 @@
 				D1870809163881F400851E51 /* Default@2x.png in Resources */,
 				D187080B163881F400851E51 /* Default-568h@2x.png in Resources */,
 				D187080E163881F400851E51 /* MainStoryboard.storyboard in Resources */,
+				D18708ED16388C8D00851E51 /* tessdata in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,6 +609,7 @@
 		D1870815163881F400851E51 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OCR Demo/OCR Demo-Prefix.pch";
 				INFOPLIST_FILE = "OCR Demo/OCR Demo-Info.plist";
@@ -620,6 +625,7 @@
 		D1870816163881F400851E51 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OCR Demo/OCR Demo-Prefix.pch";
 				INFOPLIST_FILE = "OCR Demo/OCR Demo-Info.plist";

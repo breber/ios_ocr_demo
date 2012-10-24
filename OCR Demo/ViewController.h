@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
+    IBOutlet UILabel *result;
+}
+
+- (IBAction)takePicture;
 
 @end
