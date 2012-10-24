@@ -1,0 +1,6 @@
+[submodule "ext/tesseract"]
+	path = ext/tesseract
+	url = git://github.com/ldiqual/tesseract-ios.git
+[submodule "ext/tesseract-lib"]
+	path = ext/tesseract-lib
+	url = git://github.com/ldiqual/tesseract-ios-lib.git
