@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
-    IBOutlet UILabel *result;
+    IBOutlet UITextView *result;
+    IBOutlet UIImageView *imageView;
 }
 
 - (IBAction)takePicture;

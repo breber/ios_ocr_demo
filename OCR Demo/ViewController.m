@@ -11,6 +11,8 @@
 
 @interface ViewController ()
 
+@property Tesseract *tesseract;
+
 @end
 
 @implementation ViewController
@@ -18,6 +20,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.tesseract = [[Tesseract alloc] initWithDataPath:@"tessdata" language:@"eng"];
+    [self.tesseract setVariableValue:@"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+-=*/"
+                              forKey:@"tessedit_char_whitelist"];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -32,6 +38,7 @@
     
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+        [imagePicker setAllowsEditing:YES];
     } else {
         [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
     }
@@ -43,9 +50,10 @@
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
     NSString *decoded = [self performRecognition:image];
     
+    [imageView setImage:image];
     result.text = decoded;
     
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -53,13 +61,10 @@
 
 
 - (NSString *)performRecognition:(UIImage *)image {
-    Tesseract* tesseract = [[Tesseract alloc] initWithDataPath:@"tessdata" language:@"eng"];
-    //[tesseract setVariableValue:@"0123456789" forKey:@"tessedit_char_whitelist"];
-    [tesseract setImage:image];
-    [tesseract recognize];
+    [self.tesseract setImage:image];
+    [self.tesseract recognize];
     
-    NSLog(@"%@", [tesseract recognizedText]);
-    return [tesseract recognizedText];
+    return [self.tesseract recognizedText];
 }
 
 @end

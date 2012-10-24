@@ -14,11 +14,11 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="len-u5-W7G">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="43" id="XYb-ez-mfg"/>
+                                    <constraint firstAttribute="height" constant="39" id="X2H-sv-iJp"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Show Camera">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal" title="Take Image">
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -28,24 +28,34 @@
                                     <action selector="takePicture" destination="2" eventType="touchUpInside" id="8P2-l9-uSW"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="bUk-c1-Zvk">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="psD-Yl-9gF">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="209" id="2Wc-Xt-2kS"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlV-Xr-UM2">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bUk-c1-Zvk" firstAttribute="top" secondItem="len-u5-W7G" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="EsJ-vd-kkW"/>
-                            <constraint firstItem="len-u5-W7G" firstAttribute="centerX" secondItem="bUk-c1-Zvk" secondAttribute="centerX" type="default" id="LiR-E5-Dkc"/>
-                            <constraint firstAttribute="trailing" secondItem="bUk-c1-Zvk" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="j9t-4w-znm"/>
-                            <constraint firstItem="bUk-c1-Zvk" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="kN3-AE-fDb"/>
-                            <constraint firstItem="len-u5-W7G" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="kld-z5-qjy"/>
-                            <constraint firstAttribute="bottom" secondItem="bUk-c1-Zvk" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="tx7-4j-Dyi"/>
+                            <constraint firstAttribute="trailing" secondItem="zlV-Xr-UM2" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="2Ak-sr-ksU"/>
+                            <constraint firstItem="psD-Yl-9gF" firstAttribute="top" secondItem="len-u5-W7G" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="3eN-d4-h3Q"/>
+                            <constraint firstItem="len-u5-W7G" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="3sv-ST-Rds"/>
+                            <constraint firstItem="zlV-Xr-UM2" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="OVT-MA-OB9"/>
+                            <constraint firstAttribute="trailing" secondItem="psD-Yl-9gF" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="QpB-Vg-ZpI"/>
+                            <constraint firstItem="psD-Yl-9gF" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Rbu-Ug-pHs"/>
+                            <constraint firstAttribute="trailing" secondItem="len-u5-W7G" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="kVK-np-PzN"/>
+                            <constraint firstItem="len-u5-W7G" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="o29-y9-6M6"/>
+                            <constraint firstItem="zlV-Xr-UM2" firstAttribute="top" secondItem="psD-Yl-9gF" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="suN-It-pDg"/>
+                            <constraint firstAttribute="bottom" secondItem="zlV-Xr-UM2" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="tnO-5u-ojD"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="result" destination="bUk-c1-Zvk" id="eHm-Zi-sSr"/>
+                        <outlet property="imageView" destination="psD-Yl-9gF" id="5qC-e6-jHf"/>
+                        <outlet property="result" destination="zlV-Xr-UM2" id="rU8-Pl-23X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -60,7 +70,8 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
                 <relationship kind="action" name="takePicture"/>
-                <relationship kind="outlet" name="result" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="result" candidateClass="UITextView"/>
             </relationships>
         </class>
     </classes>
