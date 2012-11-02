@@ -11,6 +11,7 @@
 @interface ViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
     IBOutlet UITextView *result;
     IBOutlet UIImageView *imageView;
+    IBOutlet UIActivityIndicatorView *activity;
 }
 
 - (IBAction)takePicture;

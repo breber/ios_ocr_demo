@@ -51,10 +51,10 @@
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
-    NSString *decoded = [self performRecognition:image];
-    
     [imageView setImage:image];
-    result.text = decoded;
+    [activity startAnimating];
+    [result setHidden:YES];
+    [self performSelectorInBackground:@selector(performRecognition:) withObject:image];
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -64,7 +64,15 @@
     [self.tesseract setImage:image];
     [self.tesseract recognize];
     
+    [self performSelectorOnMainThread:@selector(updateUI:) withObject:[self.tesseract recognizedText] waitUntilDone:YES];
+    
     return [self.tesseract recognizedText];
+}
+
+- (void)updateUI:(NSString *)text {
+    result.text = text;
+    [activity stopAnimating];
+    [result setHidden:NO];
 }
 
 @end

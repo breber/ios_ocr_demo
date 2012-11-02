@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -14,7 +14,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="len-u5-W7G">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="39" id="X2H-sv-iJp"/>
+                                    <constraint firstAttribute="height" constant="39" id="IJe-UW-dqA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                 <state key="normal" title="Take Image">
@@ -30,30 +30,34 @@
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="psD-Yl-9gF">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="209" id="2Wc-Xt-2kS"/>
+                                    <constraint firstAttribute="height" constant="196" id="sNz-Ci-tRO"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlV-Xr-UM2">
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlV-Xr-UM2">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="nTB-4J-Wff"/>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="zlV-Xr-UM2" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="2Ak-sr-ksU"/>
-                            <constraint firstItem="psD-Yl-9gF" firstAttribute="top" secondItem="len-u5-W7G" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="3eN-d4-h3Q"/>
-                            <constraint firstItem="len-u5-W7G" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="3sv-ST-Rds"/>
-                            <constraint firstItem="zlV-Xr-UM2" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="OVT-MA-OB9"/>
-                            <constraint firstAttribute="trailing" secondItem="psD-Yl-9gF" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="QpB-Vg-ZpI"/>
-                            <constraint firstItem="psD-Yl-9gF" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Rbu-Ug-pHs"/>
-                            <constraint firstAttribute="trailing" secondItem="len-u5-W7G" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="kVK-np-PzN"/>
-                            <constraint firstItem="len-u5-W7G" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="o29-y9-6M6"/>
-                            <constraint firstItem="zlV-Xr-UM2" firstAttribute="top" secondItem="psD-Yl-9gF" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="suN-It-pDg"/>
-                            <constraint firstAttribute="bottom" secondItem="zlV-Xr-UM2" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="tnO-5u-ojD"/>
+                            <constraint firstAttribute="trailing" secondItem="zlV-Xr-UM2" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="0hz-eP-x8o"/>
+                            <constraint firstItem="zlV-Xr-UM2" firstAttribute="centerX" secondItem="nTB-4J-Wff" secondAttribute="centerX" type="default" id="9F3-lL-0SB"/>
+                            <constraint firstItem="zlV-Xr-UM2" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Eri-m0-erC"/>
+                            <constraint firstAttribute="trailing" secondItem="psD-Yl-9gF" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="GMV-ss-4R2"/>
+                            <constraint firstAttribute="bottom" secondItem="zlV-Xr-UM2" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="J83-cn-r31"/>
+                            <constraint firstItem="psD-Yl-9gF" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Mm7-Lw-tkm"/>
+                            <constraint firstItem="zlV-Xr-UM2" firstAttribute="top" secondItem="psD-Yl-9gF" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="RT0-cd-RSs"/>
+                            <constraint firstAttribute="trailing" secondItem="len-u5-W7G" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Zr7-oz-gRX"/>
+                            <constraint firstItem="len-u5-W7G" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="gXZ-3l-5fL"/>
+                            <constraint firstItem="nTB-4J-Wff" firstAttribute="centerY" secondItem="zlV-Xr-UM2" secondAttribute="centerY" type="default" id="hcb-ls-46x"/>
+                            <constraint firstItem="len-u5-W7G" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="sKP-j6-yLD"/>
+                            <constraint firstItem="psD-Yl-9gF" firstAttribute="top" secondItem="len-u5-W7G" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="tPf-8t-1DA"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activity" destination="nTB-4J-Wff" id="5a9-Nr-8lQ"/>
                         <outlet property="imageView" destination="psD-Yl-9gF" id="5qC-e6-jHf"/>
                         <outlet property="result" destination="zlV-Xr-UM2" id="rU8-Pl-23X"/>
                     </connections>
@@ -70,6 +74,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
                 <relationship kind="action" name="takePicture"/>
+                <relationship kind="outlet" name="activity" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="result" candidateClass="UITextView"/>
             </relationships>
