@@ -11,8 +11,20 @@
 
 @interface ViewController ()
 
-@property Tesseract *tesseract;
-@property UIImagePickerController *imagePicker;
+// The UITextView that will contain the results
+@property(nonatomic) IBOutlet UITextView *result;
+
+// The UIImageView that will contain the image being OCR'd
+@property(nonatomic) IBOutlet UIImageView *imageView;
+
+// An activity indicator indicating whether the OCR is processing
+@property(nonatomic) IBOutlet UIActivityIndicatorView *activity;
+
+// The Tesseract OCR engine
+@property(nonatomic, strong) Tesseract *tesseract;
+
+// The UIImagePicker that allows the user to choose the image
+@property(nonatomic, strong) UIImagePickerController *imagePicker;
 
 @end
 
@@ -40,13 +52,14 @@
     [self getImage];
 }
 
-- (IBAction)choosePicture {
+- (IBAction)choosePicture
+{
     [self.imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
     [self getImage];
 }
 
-- (void)getImage {
-
+- (void)getImage
+{
     // Set the delegate to self so we get notified when the image has been chosen
     [self.imagePicker setDelegate:self];
     
@@ -60,13 +73,13 @@
     UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
     
     // Display the image on the screen
-    [imageView setImage:image];
+    [self.imageView setImage:image];
     
     // Start animating the activity indicator
-    [activity startAnimating];
+    [self.activity startAnimating];
     
     // Hide the UITextView while we are processing
-    [result setHidden:YES];
+    [self.result setHidden:YES];
     
     // Start processing the image in the background
     [self performSelectorInBackground:@selector(performRecognition:) withObject:image];
@@ -94,9 +107,9 @@
 {
     // Update the text, stop animating the activity indicator,
     // and show the text view again
-    result.text = text;
-    [activity stopAnimating];
-    [result setHidden:NO];
+    self.result.text = text;
+    [self.activity stopAnimating];
+    [self.result setHidden:NO];
 }
 
 @end

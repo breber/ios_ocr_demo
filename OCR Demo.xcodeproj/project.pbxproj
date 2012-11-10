@@ -239,8 +239,6 @@
 		D18707FA163881F400851E51 /* OCR Demo */ = {
 			isa = PBXGroup;
 			children = (
-				D1870803163881F400851E51 /* AppDelegate.h */,
-				D1870804163881F400851E51 /* AppDelegate.m */,
 				D187080C163881F400851E51 /* MainStoryboard.storyboard */,
 				D187080F163881F400851E51 /* ViewController.h */,
 				D1870810163881F400851E51 /* ViewController.m */,
@@ -252,6 +250,8 @@
 		D18707FB163881F400851E51 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D1870803163881F400851E51 /* AppDelegate.h */,
+				D1870804163881F400851E51 /* AppDelegate.m */,
 				D18707FC163881F400851E51 /* OCR Demo-Info.plist */,
 				D18707FD163881F400851E51 /* InfoPlist.strings */,
 				D1870800163881F400851E51 /* main.m */,
