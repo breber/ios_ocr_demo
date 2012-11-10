@@ -15,6 +15,16 @@ This app allows the user to take a picture of the text they want to recognize, a
 	cd ios_ocr_demo
 	git submodule update --init
 
+## Steps Needed For Tesseract ##
+
+1. Download the Tesseract Prebuilt Libraries
+2. Download the iOS Wrapper for Tesseract
+3. Download the English data for Tesseract
+4. Import all of the files from the previous steps into a normal XCode project
+5. Update the `C++ Standard Library` setting in the project Build Settings to `Compiler Default`
+6. Import `Tesseract.h` into the file you will be performing OCR in
+7. Start using the Tesseract APIs
+
 ## Helpful Links ##
 
 * [Tesseract](https://code.google.com/p/tesseract-ocr/)
