@@ -15,6 +15,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="len-u5-W7G">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="IJe-UW-dqA"/>
+                                    <constraint firstAttribute="width" constant="134" id="UFe-Zw-b3b"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                 <state key="normal" title="Take Image">
@@ -26,6 +27,19 @@
                                 </state>
                                 <connections>
                                     <action selector="takePicture" destination="2" eventType="touchUpInside" id="8P2-l9-uSW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tP9-8O-doj">
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal" title="Choose Image">
+                                    <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="choosePicture" destination="2" eventType="touchUpInside" id="VuY-Xy-1v3"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="psD-Yl-9gF">
@@ -49,9 +63,12 @@
                             <constraint firstAttribute="bottom" secondItem="zlV-Xr-UM2" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="J83-cn-r31"/>
                             <constraint firstItem="psD-Yl-9gF" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Mm7-Lw-tkm"/>
                             <constraint firstItem="zlV-Xr-UM2" firstAttribute="top" secondItem="psD-Yl-9gF" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="RT0-cd-RSs"/>
-                            <constraint firstAttribute="trailing" secondItem="len-u5-W7G" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Zr7-oz-gRX"/>
+                            <constraint firstItem="tP9-8O-doj" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Vwv-3k-LbJ"/>
+                            <constraint firstAttribute="trailing" secondItem="tP9-8O-doj" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="auv-G9-VXu"/>
+                            <constraint firstItem="psD-Yl-9gF" firstAttribute="top" secondItem="tP9-8O-doj" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="fBa-OE-9PS"/>
                             <constraint firstItem="len-u5-W7G" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="gXZ-3l-5fL"/>
                             <constraint firstItem="nTB-4J-Wff" firstAttribute="centerY" secondItem="zlV-Xr-UM2" secondAttribute="centerY" type="default" id="hcb-ls-46x"/>
+                            <constraint firstItem="tP9-8O-doj" firstAttribute="leading" secondItem="len-u5-W7G" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="oXn-kh-V5M"/>
                             <constraint firstItem="len-u5-W7G" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="sKP-j6-yLD"/>
                             <constraint firstItem="psD-Yl-9gF" firstAttribute="top" secondItem="len-u5-W7G" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="tPf-8t-1DA"/>
                         </constraints>
@@ -66,20 +83,6 @@
             </objects>
         </scene>
     </scenes>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="takePicture"/>
-                <relationship kind="outlet" name="activity" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="result" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

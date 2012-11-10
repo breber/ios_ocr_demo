@@ -23,6 +23,10 @@
 // The method to be called that will pop up the image picker
 - (IBAction)takePicture;
 
+- (IBAction)choosePicture;
+
+- (void)getImage;
+
 // Update the UI when processing is completed
 - (void)updateUI:(NSString *)text;
 

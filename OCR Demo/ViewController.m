@@ -12,6 +12,7 @@
 @interface ViewController ()
 
 @property Tesseract *tesseract;
+@property UIImagePickerController *imagePicker;
 
 @end
 
@@ -21,36 +22,36 @@
 {
     [super viewDidLoad];
     
+    self.imagePicker = [[UIImagePickerController alloc] init];
+    [self.imagePicker setAllowsEditing:YES];
+    
     // Initialize the Tesseract instance with the trained data found in our bundle
     self.tesseract = [[Tesseract alloc] initWithDataPath:@"tessdata" language:@"eng"];
     
     // Set the character whitelist to just be numbers, lowercase and uppercase letters
     // and a few special symbols
-    [self.tesseract setVariableValue:@"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+-=*/"
+    [self.tesseract setVariableValue:@"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+-=*/!""'."
                               forKey:@"tessedit_char_whitelist"];
 }
 
 - (IBAction)takePicture
 {
-    // Create the image picker view controller
-    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-    [imagePicker setAllowsEditing:YES];
-    
-    // Check to see if the device has a camera
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        // If it has a camera, use the camera w/ editing feature
-        [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
-    } else {
-        // If it doesn't have a camera, allow the user to choose from
-        // their photo library
-        [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-    }
-    
+    [self.imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+    [self getImage];
+}
+
+- (IBAction)choosePicture {
+    [self.imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    [self getImage];
+}
+
+- (void)getImage {
+
     // Set the delegate to self so we get notified when the image has been chosen
-    [imagePicker setDelegate:self];
+    [self.imagePicker setDelegate:self];
     
     // Present the UIImagePickerController
-    [self presentViewController:imagePicker animated:YES completion:nil];
+    [self presentViewController:self.imagePicker animated:YES completion:nil];
 }
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
